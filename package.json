@@ -1,9 +1,9 @@
 {
-	"name": "generator-meanjs-table",
+	"name": "generator-meanjs-forms",
 	"version": "0.0.1",
 	"description": "MEAN.JS Table Yeoman Generator",
 	"main": "app/index.js",
-	"repository": "jlmonteagudo/generator-meanjs-table",
+	"repository": "dezynetechnologies/generator-meanjs-table",
 	"author": {
 		"name": "Jose Luis Monteagudo",
 		"email": "jl_monteagudo@yahoo.es",
