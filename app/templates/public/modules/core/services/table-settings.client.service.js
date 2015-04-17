@@ -3,11 +3,7 @@
 
     angular
         .module('core')
-        .factory('TableSettings', factory);
-
-    factory.$inject = ['ngTableParams'];
-
-    function factory(ngTableParams) {
+        .factory('TableSettings', ['ngTableParams', function (ngTableParams) {
 
       var getData = function(Entity) {
         return function($defer, params) {
@@ -43,6 +39,6 @@
 
       return service;
 
-  }
+  }]);
 
 })();
