@@ -7,5 +7,10 @@ angular.module('users').controller('ListUsersController', ['$scope', '$statePara
         $scope.find = function () {
             $scope.users = UsersProfiles.query();
         };
+        $scope.remove = function (user){
+          var user = UsersProfiles.remove({
+              userId: user._id
+          });
+        };
     }
 ]);

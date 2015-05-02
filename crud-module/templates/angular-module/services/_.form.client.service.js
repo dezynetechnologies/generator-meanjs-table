@@ -3,9 +3,7 @@
 
     angular
         .module('<%= slugifiedPluralName %>')
-        .factory('<%= classifiedPluralName %>Form', factory);
-
-    function factory() {
+        .factory('<%= classifiedPluralName %>Form', function () {
 
       var getFormFields = function(disabled) {
 
@@ -31,6 +29,6 @@
 
       return service;
 
-  }
+  });
 
 })();

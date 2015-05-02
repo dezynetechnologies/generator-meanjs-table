@@ -19,13 +19,17 @@ The meanjs generator displays database records like a blog structure. However, w
 At first place, you will need to install the meanjs-table generator:
 
 ```
-$ npm install -g generator-meanjs-table
+$ npm install -g generator-meanjs-forms
 ```
 
 You have to create a new folder for your project and from this folder you will generate your application:
 
 ```
-$ yo meanjs-table
+$ cd generator-means-forms
+//If running locally
+$ npm link  
+//Generate a sample app
+$ yo meanjs-forms
 ```
 
 Next, you will create a new entity:

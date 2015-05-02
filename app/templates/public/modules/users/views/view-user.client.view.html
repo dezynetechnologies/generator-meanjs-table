@@ -1,21 +1,28 @@
-<section data-ng-controller="ViewUserController" data-ng-init="findOne()">
-    <div class="page-header">
-        <h1 data-ng-bind="user.firstName + ' ' + user.lastName"></h1>
-    </div>
-    <div class="pull-right" data-ng-show="(authentication.user)">
-        <a class="btn btn-primary" ng-href="/#!/users/profiles/{{user._id}}/edit">
-            <i class="glyphicon glyphicon-edit"></i>
-        </a>
-        <a class="btn btn-primary" data-ng-click="remove();">
-            <i class="glyphicon glyphicon-trash"></i>
-        </a>
-    </div>
-    <small>
-        <em class="text-muted">
-            Posted on
-            <span data-ng-bind="user.created | date:'mediumDate'"></span>
-            by
-            <span data-ng-bind="user.displayName"></span>
-        </em>
-    </small>
+<section data-ng-controller="ViewUserController" data-ng-init="toViewUser()">
+	<div class="page-header">
+		<h1 data-ng-bind="user.name"></h1>
+	</div>
+
+	<div class="col-md-12">
+
+		<form novalidate>
+			<formly-form model="user" fields="formFields">
+			</formly-form>
+		</form>
+
+		<hr/>
+		<div data-ng-show="(authentication.user)">
+			<a class="btn btn-success" href="/#!/users/profiles/{{user._id}}/edit">
+				<i class="glyphicon glyphicon-edit"></i> Edit
+			</a>
+			<a class="btn btn-danger" title="Remove" ng-really-message="Are you sure ?" ng-really-click="remove()" item="user">
+				<i class="glyphicon glyphicon-remove-circle"></i> Delete
+			</a>
+			<a class="btn btn-primary" href="/#!/users/profiles/list">
+				<i class="glyphicon glyphicon-list"></i> List Users
+			</a>
+		</div>
+
+	</div>
+
 </section>

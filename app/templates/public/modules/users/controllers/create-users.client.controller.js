@@ -1,9 +1,15 @@
 'use strict';
 
 
-angular.module('users').controller('CreateUsersController', ['$scope', '$stateParams', '$location', 'Authentication', 'Users', 'UsersProfiles',
-    function ($scope, $stateParams, $location, Authentication, Users, UsersProfiles) {
-        //$scope.authentication = Authentication;
+angular.module('users').controller('CreateUsersController', ['$scope', '$stateParams', '$location', 'Authentication', 'Users', 'UsersProfiles', 'TableSettings','UsersForm',
+    function ($scope, $stateParams, $location, Authentication, Users, UsersProfiles, TableSettings, UsersForm) {
+        $scope.authentication = Authentication;
+        $scope.tableParams = TableSettings.getParams(UsersProfiles);
+        $scope.user = {};
+        $scope.setFormFields = function(disabled) {
+              $scope.formFields = UsersForm.getFormFields(disabled);
+            };
+
         // Create new User
         $scope.create = function () {
             // Create new Employee object
